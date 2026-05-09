@@ -43,21 +43,37 @@ export default function LandingPage() {
 
   return (
     <Layout>
+      {/* Dot navigation */}
       <nav className="fixed top-0 right-0 h-screen flex flex-col justify-center z-30 p-4">
         {sections.map((section, index) => (
           <button
             key={section.id}
-            className={`w-3 h-3 rounded-full my-2 transition-all ${
-              index === activeSection ? 'bg-white scale-150' : 'bg-gray-600'
+            className={`w-2.5 h-2.5 rounded-full my-2 transition-all duration-300 ${
+              index === activeSection
+                ? 'bg-[#b366ff] scale-150 shadow-[0_0_8px_#b366ff]'
+                : 'bg-[#3a1a5a] hover:bg-[#7a33cc]'
             }`}
             onClick={() => handleNavClick(index)}
           />
         ))}
       </nav>
+
+      {/* Progress bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-0.5 bg-white origin-left z-30"
-        style={{ scaleX }}
+        className="fixed top-0 left-0 right-0 h-0.5 origin-left z-30"
+        style={{
+          scaleX,
+          background: 'linear-gradient(90deg, #b366ff, #ff6400)'
+        }}
       />
+
+      {/* Logo */}
+      <div className="fixed top-5 left-6 z-30 flex items-center gap-2">
+        <span className="text-white font-bold text-xl tracking-tight">
+          Shuzik <span className="text-[#b366ff]">Shop</span>
+        </span>
+      </div>
+
       <div
         ref={containerRef}
         className="h-full overflow-y-auto snap-y snap-mandatory"

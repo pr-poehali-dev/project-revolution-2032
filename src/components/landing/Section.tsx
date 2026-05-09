@@ -7,7 +7,7 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
     <section id={id} className="relative h-screen w-full snap-start flex flex-col justify-center p-8 md:p-16 lg:p-24">
       {subtitle && (
         <motion.div
-          className="mb-12"
+          className="mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={isActive ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
@@ -19,13 +19,13 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
         className="text-4xl md:text-6xl lg:text-[5rem] xl:text-[6rem] font-bold leading-[1.1] tracking-tight max-w-4xl text-white"
         initial={{ opacity: 0, y: 50 }}
         animate={isActive ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6 }}
       >
         {title}
       </motion.h2>
       {content && (
         <motion.p
-          className="text-lg md:text-xl lg:text-2xl max-w-2xl mt-6 text-neutral-400"
+          className="text-lg md:text-xl lg:text-2xl max-w-2xl mt-6 text-neutral-400 leading-relaxed"
           initial={{ opacity: 0, y: 50 }}
           animate={isActive ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -38,12 +38,11 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
           initial={{ opacity: 0, y: 20 }}
           animate={isActive ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-12 md:mt-16"
+          className="mt-12 md:mt-16 flex gap-4 flex-wrap"
         >
           <Button
-            variant="outline"
             size="lg"
-            className="text-[#FF4D00] bg-transparent border-[#FF4D00] hover:bg-[#FF4D00] hover:text-black transition-colors"
+            className="bg-[#b366ff] hover:bg-[#9933ff] text-white font-semibold px-8 py-6 text-lg rounded-xl shadow-[0_0_24px_#b366ff66] transition-all hover:shadow-[0_0_36px_#9933ff99]"
           >
             {buttonText}
           </Button>
